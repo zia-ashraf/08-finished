@@ -1,0 +1,17 @@
+.form {
+  width: 100%;
+}
+.input-todo {
+  margin: auto;
+  display: block;
+}
+.input-button {
+  margin: auto;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.filter {
+  margin: auto;
+  display: block;
+}
