@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 import "./App.css";
@@ -11,7 +11,23 @@ function App() {
       { text: input, completed: false, id: Math.random() * 1000 },
     ]);
   };
-
+  useEffect(() => {
+    getFromLocalStorage();
+  }, []);
+  useEffect(() => {
+    savetoLocalStorage();
+  }, [todoListItems]);
+  const savetoLocalStorage = () => {
+    localStorage.setItem("todo", JSON.stringify(todoListItems));
+  };
+  const getFromLocalStorage = () => {
+    if (localStorage.getItem("todo" === null)) {
+      localStorage.setItem("todo", JSON.stringify([]));
+    } else {
+      const localTodo = localStorage.getItem("todo");
+      setTodoListItems(JSON.parse(localTodo));
+    }
+  };
   console.log("function rerendered");
   // console.log(todoListItems);
 

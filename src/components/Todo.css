@@ -12,7 +12,8 @@
   list-style: none;
 }
 .completed {
-  text-decoration: line-through red;
+  text-decoration: line-through black;
+  color: rgba(0, 0, 0, 0.192);
 }
 .delete {
   height: auto;
