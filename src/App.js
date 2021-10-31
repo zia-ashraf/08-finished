@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
-
+import "./App.css";
 function App() {
-  const [inputVal, setInputVal] = useState("");
+  const [todoListItems, setTodoListItems] = useState([]);
 
   const inputValHandler = (input) => {
-    setInputVal(input);
+    setTodoListItems([
+      ...todoListItems,
+      { text: input, completed: false, id: Math.random() * 1000 },
+    ]);
   };
-  console.log(inputVal);
   console.log("function rerendered");
+  console.log(todoListItems);
 
   return (
     <div>
@@ -17,7 +20,7 @@ function App() {
         <h1>Your Todo list</h1>
       </header>
       <Form onInputGiven={inputValHandler}></Form>
-      <TodoList />
+      <TodoList todolist={todoListItems} setTodos={setTodoListItems} />
     </div>
   );
 }

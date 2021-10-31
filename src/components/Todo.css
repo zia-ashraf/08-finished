@@ -1,0 +1,33 @@
+.todo {
+  margin: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 3s ease;
+}
+.text {
+  font-size: 10px;
+  list-style: none;
+}
+.completed {
+  text-decoration: line-through red;
+}
+.delete {
+  height: auto;
+  width: 15px;
+  border: 1px solid red;
+  /* float: right; */
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background: #55e214;
+}
+.delete-btn {
+  background-color: rgb(216, 24, 24);
+}
